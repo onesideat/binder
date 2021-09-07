@@ -4,7 +4,7 @@
 
 A perfect solution for really small projects. It will boost your productivity with < 15Kb script without downloading and compiling a huge amount of code.
 
-__[Documentation](https://codepen.io/onesideat/pen/YzQNyvb) | [Example](https://codepen.io/onesideat/pen/YzQNyvb)__
+__[Documentation](https://oneside.at/binder/) | [Example](https://codepen.io/onesideat/pen/YzQNyvb)__
 
 ### Installation
 Download and link the binder.min.js into your HTML page.
