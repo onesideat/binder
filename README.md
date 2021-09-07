@@ -4,7 +4,7 @@
 
 A perfect solution for really small projects. It will boost your productivity with < 15Kb script without downloading and compiling a huge amount of code.
 
-[Download](https://codepen.io/onesideat/pen/YzQNyvb) | [Example](https://codepen.io/onesideat/pen/YzQNyvb) | [Gitlab](https://codepen.io/onesideat/pen/YzQNyvb)
+[Documentation](https://codepen.io/onesideat/pen/YzQNyvb) | [Example](https://codepen.io/onesideat/pen/YzQNyvb)
 
 ### Installation
 Download and link the binder.min.js into your HTML page.
