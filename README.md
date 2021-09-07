@@ -4,7 +4,7 @@
 
 A perfect solution for really small projects. It will boost your productivity with < 15Kb script without downloading and compiling a huge amount of code.
 
-[Documentation](https://codepen.io/onesideat/pen/YzQNyvb) | [Example](https://codepen.io/onesideat/pen/YzQNyvb)
+__[Documentation](https://codepen.io/onesideat/pen/YzQNyvb) | [Example](https://codepen.io/onesideat/pen/YzQNyvb)__
 
 ### Installation
 Download and link the binder.min.js into your HTML page.
@@ -17,16 +17,16 @@ Download and link the binder.min.js into your HTML page.
 **HTML**
 ~~~html
 <div id="app">
-	{{ message }}
+    {{ message }}
 </div>
 ~~~
 
 **JavaScript**
 ~~~js
 var app = new Binder(document.getElementById('app'), {
-	data: {
-		message: 'Hello World'
-	}
+    data: {
+	message: 'Hello World'
+    }
 });
 ~~~
 
