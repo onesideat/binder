@@ -540,7 +540,8 @@ const Binder = function(el, options) {
             let a = children[0];
 
             if (a.nodeType == 1) {
-                let attrs = a._bindedAttributes || Array.from(a.attributes);
+                let attrs = a._bindedAttributes || Array.from(a.attributes),
+                    hasChildren = a.childNodes.length;
 
                 for (let i = 0; i < attrs.length; i++) {
                     let attr = attrs[i],
@@ -550,22 +551,28 @@ const Binder = function(el, options) {
                         name = _.opts.prefix + '-bind' + name;
                     if (name.indexOf('@') == 0)
                         name = _.opts.prefix + '-on:' + name.substr(1);
-
                     if (name.indexOf(_.opts.prefix + '-') == 0) {
-                        if (name.indexOf('cloak') > -1)
+                        if (name == _.opts.prefix +'-cloak') {
+                            a.removeAttribute(name);
                             continue;
+                        }
                         if (!a._bindedAttributes)
                             a._bindedAttributes = [];
                         if (a._bindedAttributes.indexOf(attr) == -1)
                             a._bindedAttributes.push(attr);
+                        if (name == _.opts.prefix +'-ignore') {
+                            hasChildren = 0;
+                            a.removeAttribute(name);
+                            continue;
+                        }
 
                         attribute(a, name.substr(2), attr.value, findScope(a));
                         a.removeAttribute(attr.name);
                     }
                 }
 
-                traverse(a);
-                a.removeAttribute(_.opts.prefix +'-cloak');
+                if (hasChildren)
+                    traverse(a);
             } else if (a.nodeType == 3) {
                 if (a._bindedValue || a.nodeValue.match(new RegExp('\\'+_.opts.delimiters[0]+'.*?\\' + _.opts.delimiters[1]))) {
                     let parser = text(a._bindedValue || a.nodeValue, findScope(a));
